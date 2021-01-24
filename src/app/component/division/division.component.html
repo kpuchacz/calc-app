@@ -1,0 +1,33 @@
+<ng-container *ngIf="justDont == null; then goodDividing else badDividing"></ng-container>
+<ng-template #goodDividing>
+  <hr>
+<h2>Dividing section</h2>
+<input type="number" name="a" [(ngModel)]="a">
+<output> / </output>
+<input type="number" name="b" [(ngModel)]="b"><output *ngIf="$any(result) || $any(justDont)">  = {{result}}{{justDont}}</output>
+
+<br><br>
+<div *ngIf="this.b != 0; else triesToDivideByZero">
+  <button (click)="divide()" class="my-button" >divide</button>
+</div>
+<ng-template #triesToDivideByZero>
+  <button (click)="heOrSheSeriouslyTriesToDivideBeZeroHaHaHaHa()" class="my-button">nope</button>
+</ng-template>
+</ng-template>
+<ng-template #badDividing><div id="my-div-gone-wrong">
+  <hr>
+  <h2>Dividing section</h2>
+  <input type="number" name="a" [(ngModel)]="a">
+  <output> / </output>
+  <input type="number" name="b" [(ngModel)]="b"><output *ngIf="$any(result) || $any(justDont)">  = {{result}}{{justDont}}</output>
+
+  <br><br>
+  <div *ngIf="this.b != 0; else triesToDivideByZero">
+    <button (click)="divide()" class="my-button" >divide</button>
+  </div>
+  <ng-template #triesToDivideByZero>
+    <button (click)="heOrSheSeriouslyTriesToDivideBeZeroHaHaHaHa()" class="my-button">nope</button>
+  </ng-template>
+</div>
+</ng-template>
+<hr>

@@ -1,0 +1,9 @@
+<hr>
+<h2>Substracting section</h2>
+<input type="number" name="a" [(ngModel)]="a">
+<output> - </output>
+<input type="number" name="b" [(ngModel)]="b"><output *ngIf="$any(result)">  = {{result}}</output>
+
+<br><br>
+<button (click)="substract()" class="my-button">substract</button>
+<hr>
